@@ -9,7 +9,7 @@
         <script src="js/scripts.js"></script>
     </head>
     <body>
-        <nav class="navbar navbar-default">
+        <nav class="navbar navbar-default" id="navTit">
             <div class="container">
                 <div class="navbar-header">
                     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
@@ -28,7 +28,7 @@
                 </div>
             </div>
         </nav>
-        <div class="container-fluid bg-1 text-center">
+        <div class="container-fluid bg-1 text-center" id="contPrinc">
             <div class="row">
                 <div class="col-md-3">Últimos números</div>
                 <div class="col-md-3">Sorteio</div>

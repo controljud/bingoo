@@ -24,10 +24,6 @@ p {font-size: 16px;}
     background-color: #2f2f2f; /* Black Gray */
     color: #fff;
 }
-.container-fluid {
-    padding-top: 70px;
-    padding-bottom: 70px;
-}
 .navbar {
     padding-top: 15px;
     padding-bottom: 15px;

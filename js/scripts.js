@@ -41,6 +41,19 @@ function sorteia(){
 function embaralha(){
     alert('Números embaralhados com sucesso');
 }
+function redimensiona(){
+    altura = window.innerHeight;
+    altTit = $('#navTit').height();
+    tamPrinc = $('#contPrinc').height();
+
+    tamPrinc = tamPrinc;
+    tamMarg = ((altura-altTit-tamPrinc) / 2)-15;
+
+    $('#contPrinc').css({
+        'padding-top' : tamMarg,
+        'padding-bottom' : tamMarg
+    });
+}
 $(document).keypress(function(e){
     cod = e.keyCode || e.charCode;
     switch(cod){
@@ -57,6 +70,7 @@ $(document).keypress(function(e){
     return false;
 });
 $(document).ready(function(){
+    redimensiona();
     $('.btSortear').click(function(){
         sorteia();
     });
