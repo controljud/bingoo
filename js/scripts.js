@@ -2,6 +2,24 @@ sorteados = new Array();
 arrSort = new Array();
 total = 0;
 tam = 90;
+
+var floreio = {};
+floreio[1] = "Começou o jogo";
+floreio[11] = "Um atrás do outro";
+floreio[18] = "Minha idade";
+floreio[22] = "Dois patinhos na lagoa";
+floreio[33] = "Idade de Cristo";
+floreio[45] = "Fim do primeiro tempo";
+floreio[51] = "Uma boa ideia";
+
+function fala(texto){
+    if(isNaN(texto) || floreio[texto] == undefined) {
+        msg = new SpeechSynthesisUtterance(texto);
+    }else{
+        msg = new SpeechSynthesisUtterance(texto + ' ' + floreio[texto]);
+    }
+    window.speechSynthesis.speak(msg);
+}
 function ultimosSorteios(num){
     sorteados[sorteados.length] = num;
     var sort = '';
@@ -30,6 +48,12 @@ function sorteia(){
 
                 achou = true;
                 total++;
+
+                //Voz
+                for(i=0; i<2; i++){
+                    fala(num);
+                }
+                // - Fim da voz
             }
         }
     }else{
@@ -39,7 +63,8 @@ function sorteia(){
     }
 }
 function embaralha(){
-    alert('Números embaralhados com sucesso');
+    texto = 'Números embaralhados com sucesso';
+    fala(texto);
 }
 function redimensiona(){
     altura = window.innerHeight;
@@ -54,6 +79,12 @@ function redimensiona(){
         'padding-bottom' : tamMarg
     });
 }
+function bingo(){
+    fala('Alguém ganhou o bingo');
+}
+function cantando(){
+    fala('Calma que já estou cantando o bingo');
+}
 $(document).keypress(function(e){
     cod = e.keyCode || e.charCode;
     switch(cod){
@@ -65,6 +96,12 @@ $(document).keypress(function(e){
             break;
         case 101:
             embaralha();
+            break;
+        case 98:
+            bingo();
+            break;
+        case 99:
+            cantando();
             break;
     }
     return false;
