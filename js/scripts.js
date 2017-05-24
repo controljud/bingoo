@@ -11,12 +11,19 @@ floreio[22] = "Dois patinhos na lagoa";
 floreio[33] = "Idade de Cristo";
 floreio[45] = "Fim do primeiro tempo";
 floreio[51] = "Uma boa ideia";
+floreio[60] = "Que está cansado";
+floreio[70] = "E continua tentando";
+floreio[90] = "Fim do jogo";
 
+function dialoga(){
+    texto = prompt('O que você quer que eu fale?');
+    fala(texto);
+}
 function fala(texto){
     if(isNaN(texto) || floreio[texto] == undefined) {
         msg = new SpeechSynthesisUtterance(texto);
     }else{
-        msg = new SpeechSynthesisUtterance(texto + ' ' + floreio[texto]);
+        msg = new SpeechSynthesisUtterance(texto + ', ' + floreio[texto]);
     }
     window.speechSynthesis.speak(msg);
 }
@@ -102,6 +109,9 @@ $(document).keypress(function(e){
             break;
         case 99:
             cantando();
+            break;
+        case 100:
+            dialoga();
             break;
     }
     return false;
