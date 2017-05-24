@@ -2,6 +2,7 @@ sorteados = new Array();
 arrSort = new Array();
 total = 0;
 tam = 90;
+cam = 0;
 
 var floreio = {};
 floreio[1] = "Começou o jogo";
@@ -61,6 +62,10 @@ function sorteia(){
                     fala(num);
                 }
                 // - Fim da voz
+                cam++;
+                if(cam == 65){
+                    fala('Estou cansada de falar. Alguém quer me substituir? Não? Poxa...');
+                }
             }
         }
     }else{
@@ -68,10 +73,6 @@ function sorteia(){
             location.reload();
         }
     }
-}
-function embaralha(){
-    texto = 'Números embaralhados com sucesso';
-    fala(texto);
 }
 function redimensiona(){
     altura = window.innerHeight;
@@ -86,32 +87,29 @@ function redimensiona(){
         'padding-bottom' : tamMarg
     });
 }
-function bingo(){
-    fala('Alguém ganhou o bingo');
-}
-function cantando(){
-    fala('Calma que já estou cantando o bingo');
-}
 $(document).keypress(function(e){
     cod = e.keyCode || e.charCode;
     switch(cod){
-        case 13:
+        case 13: //[ENTER]
             sorteia();
             break;
-        case 113:
+        case 113: //q
             location.reload();
             break;
-        case 101:
-            embaralha();
+        case 101: //e
+            fala('Números embaralhados com sucesso');
             break;
-        case 98:
-            bingo();
+        case 98: //b
+            fala('Alguém ganhou o bingo');
             break;
-        case 99:
-            cantando();
+        case 99: //c
+            fala('Calma que já estou cantando o bingo');
             break;
-        case 100:
+        case 100: //d
             dialoga();
+            break;
+        case 97: //a
+            fala('O jogo está começando. Preparem-se');
             break;
     }
     return false;
