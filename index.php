@@ -30,6 +30,11 @@
         </nav>
         <div class="container-fluid bg-1 text-center" id="contPrinc">
             <div class="row">
+                <div class="col-md-1" style="text-align:right"><input style="width:15px; margin:12px" type="checkbox" id="play_voice" name="play_voice" checked/></div>
+                <div class="col-md-1">Narração</div>
+                <div class="col-md-10"></div>
+            </div>
+            <div class="row">
                 <div class="col-md-3">Últimos números</div>
                 <div class="col-md-3">Sorteio</div>
                 <div class="col-md-6">Sorteados</div>

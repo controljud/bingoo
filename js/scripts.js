@@ -21,12 +21,14 @@ function dialoga(){
     fala(texto);
 }
 function fala(texto){
-    if(isNaN(texto) || floreio[texto] == undefined) {
-        msg = new SpeechSynthesisUtterance(texto);
-    }else{
-        msg = new SpeechSynthesisUtterance(texto + ', ' + floreio[texto]);
+    if($('#play_voice').is(':checked')) {
+        if (isNaN(texto) || floreio[texto] == undefined) {
+            msg = new SpeechSynthesisUtterance(texto);
+        } else {
+            msg = new SpeechSynthesisUtterance(texto + ', ' + floreio[texto]);
+        }
+        window.speechSynthesis.speak(msg);
     }
-    window.speechSynthesis.speak(msg);
 }
 function ultimosSorteios(num){
     sorteados[sorteados.length] = num;
