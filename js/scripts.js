@@ -20,6 +20,13 @@ floreio[51] = "Uma boa ideia";
 floreio[70] = "E continua tentando";
 floreio[90] = "Fim do jogo";
 
+function novoJogo(){
+    narracao = $('#play_voice').is(':checked') * 1;
+    piada = $('#jokes').is(':checked') * 1;
+    url = location.href;
+    url = url.split('?')[0];
+    location.href = url + '?narracao=' + narracao + '&piada=' + piada;
+}
 function dialoga(){
     texto = prompt('O que você quer que eu fale?');
     fala(texto);
@@ -71,16 +78,11 @@ function sorteia(){
                 }
                 // - Fim da voz
                 cam++;
-                if(cam == 65){
-                    if($('#jokes').is(':checked')) {
-                        fala('Estou cansada de falar. Alguém quer me substituir? Não? Poxa...');
-                    }
-                }
             }
         }
     }else{
         if(confirm('Jogo encerrado. Deseja reinicia-lo?')){
-            location.reload();
+            novoJogo();
         }
     }
 }
@@ -104,7 +106,7 @@ $(document).keypress(function(e){
             sorteia();
             break;
         case 113: //q
-            location.reload();
+            novoJogo();
             break;
         case 101: //e
             fala('Números embaralhados com sucesso');
@@ -130,7 +132,7 @@ $(document).ready(function(){
         sorteia();
     });
     $('.btNovoJogo').click(function(){
-        location.reload();
+        novoJogo();
     });
     $('.btEmbaralhar').click(function(){
         embaralha();

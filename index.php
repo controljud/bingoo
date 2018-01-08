@@ -1,3 +1,12 @@
+<?php
+    if(isset($_GET['narracao']) && isset($_GET['piada'])){
+        $narracao = $_GET['narracao'];
+        $piada = $_GET['piada'];
+    }else{
+        $narracao = 1;
+        $piada = 1;
+    }
+?>
 <html>
     <head>
         <meta charset="utf-8">
@@ -30,9 +39,13 @@
         </nav>
         <div class="container-fluid bg-1 text-center" id="contPrinc">
             <div class="row">
-                <div class="col-md-1" style="text-align:right"><input style="width:15px; margin:12px" type="checkbox" id="play_voice" name="play_voice" checked/></div>
+                <div class="col-md-1" style="text-align:right">
+                    <input style="width:15px; margin:12px" type="checkbox" id="play_voice" name="play_voice" <?php if($narracao == 1){ ?>checked<?php } ?>/>
+                </div>
                 <div class="col-md-1">Narração</div>
-                <div class="col-md-1" style="text-align:right"><input style="width:15px; margin:12px" type="checkbox" id="jokes" name="jokes" checked/></div>
+                <div class="col-md-1" style="text-align:right">
+                    <input style="width:15px; margin:12px" type="checkbox" id="jokes" name="jokes" <?php if($narracao == 0) {?>disabled="disabled"<?php }else{ if($piada == 1){?> checked<?php }}?>/>
+                </div>
                 <div class="col-md-1">Piadas</div>
                 <div class="col-md-8"></div>
             </div>
