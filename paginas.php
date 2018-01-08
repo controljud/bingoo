@@ -9,7 +9,7 @@
     $jogos = array();
 
 
-while(count($jogos) < $pg*$qtdPorPagina) {
+    while(count($jogos) < $pg*$qtdPorPagina) {
         $jogo = array();
         while (count($jogo) < $qtdCartela) {
             $num = rand(1, $qtdNumeros);
