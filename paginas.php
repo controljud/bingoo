@@ -8,7 +8,6 @@
     $stsjogo = array();
     $jogos = array();
 
-
     while(count($jogos) < $pg*$qtdPorPagina) {
         $jogo = array();
         while (count($jogo) < $qtdCartela) {
