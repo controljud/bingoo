@@ -6,13 +6,17 @@ cam = 0;
 
 var floreio = {};
 floreio[1] = "Começou o jogo";
+floreio[2] = "Feijão com arroz";
+floreio[6] = "Meia dúzia";
 floreio[11] = "Um atrás do outro";
+floreio[12] = "Uma dúzia";
+floreio[13] = "Número da sorte";
 floreio[18] = "Minha idade";
 floreio[22] = "Dois patinhos na lagoa";
+floreio[24] = "Rapazinho alegre";
 floreio[33] = "Idade de Cristo";
 floreio[45] = "Fim do primeiro tempo";
 floreio[51] = "Uma boa ideia";
-floreio[60] = "Que está cansado";
 floreio[70] = "E continua tentando";
 floreio[90] = "Fim do jogo";
 
@@ -25,7 +29,9 @@ function fala(texto){
         if (isNaN(texto) || floreio[texto] == undefined) {
             msg = new SpeechSynthesisUtterance(texto);
         } else {
-            msg = new SpeechSynthesisUtterance(texto + ', ' + floreio[texto]);
+            if($('#jokes').is(':checked')) {
+                msg = new SpeechSynthesisUtterance(texto + ', ' + floreio[texto]);
+            }
         }
         window.speechSynthesis.speak(msg);
     }
@@ -66,7 +72,9 @@ function sorteia(){
                 // - Fim da voz
                 cam++;
                 if(cam == 65){
-                    fala('Estou cansada de falar. Alguém quer me substituir? Não? Poxa...');
+                    if($('#jokes').is(':checked')) {
+                        fala('Estou cansada de falar. Alguém quer me substituir? Não? Poxa...');
+                    }
                 }
             }
         }
@@ -135,5 +143,12 @@ $(document).ready(function(){
     });
     $('.numeroSorteado').click(function(){
        sorteia();
+    });
+    $('#play_voice').change(function(){
+        if(!$(this).is(':checked')){
+            $('#jokes').attr('disabled', true);
+        }else{
+            $('#jokes').attr('disabled', false);
+        }
     });
 });

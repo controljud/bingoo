@@ -2,10 +2,10 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <link rel="stylesheet" href="css/bootstrap.css">
         <link rel="stylesheet" href="css/estilos.css" type="text/css">
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <script src="js/jquery-3.2.1.js"></script>
+        <script src="js/bootstrap.js"></script>
         <script src="js/scripts.js"></script>
     </head>
     <body>
@@ -32,7 +32,9 @@
             <div class="row">
                 <div class="col-md-1" style="text-align:right"><input style="width:15px; margin:12px" type="checkbox" id="play_voice" name="play_voice" checked/></div>
                 <div class="col-md-1">Narração</div>
-                <div class="col-md-10"></div>
+                <div class="col-md-1" style="text-align:right"><input style="width:15px; margin:12px" type="checkbox" id="jokes" name="jokes" checked/></div>
+                <div class="col-md-1">Piadas</div>
+                <div class="col-md-8"></div>
             </div>
             <div class="row">
                 <div class="col-md-3">Últimos números</div>
