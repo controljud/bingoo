@@ -3,6 +3,7 @@ arrSort = new Array();
 total = 0;
 tam = 90;
 cam = 0;
+var interval = 0;
 
 var floreio = {};
 floreio[1] = "Começou o jogo";
@@ -152,5 +153,24 @@ $(document).ready(function(){
         }else{
             $('#jokes').attr('disabled', false);
         }
+    });
+    $('#st-automatico').change(function(){
+        if($(this).is(':checked')){
+            $('.ct-at-buttons').toggle(300);
+        }else{
+            $('.ct-at-buttons').hide();
+        }
+    });
+    $('#st-play').click(function(){
+        tempo = 7000;
+        clearInterval(interval);
+        $('.img-loading').toggle(300);
+        interval = setInterval(function(){
+            sorteia();
+        },tempo);
+    });
+    $('#st-pause').click(function(){
+        $('.img-loading').hide();
+        clearInterval(interval);
     });
 });

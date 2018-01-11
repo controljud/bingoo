@@ -39,3 +39,19 @@ p {font-size: 16px;}
 .numeroSorteado{ font-size: 130px; cursor:pointer; }
 .ultimosNumeros{ font-size: 25px; }
 .btSortear{ font-size: 35px; }
+#contPrinc{
+    padding-top:20px;
+}
+.white, .white a {
+    color: #fff;
+}
+.ct-at-buttons{
+    display:none;
+}
+.img-loading {
+    display: none;
+}
+.img-load{
+    width:30px;
+    height:30px;
+}

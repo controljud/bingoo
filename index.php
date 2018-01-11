@@ -12,6 +12,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="css/bootstrap.css">
+        <link rel="stylesheet" href="css/bootstrap-theme.css">
         <link rel="stylesheet" href="css/estilos.css" type="text/css">
         <script src="js/jquery-3.2.1.js"></script>
         <script src="js/bootstrap.js"></script>
@@ -79,6 +80,23 @@
                     </div>
                 </div>
             </div>
+            <dif class="row">
+                <div class="col-md-1" style="text-align: right">
+                    <input style="width:15px; margin:12px" type="checkbox" name="st-automatico" id="st-automatico" />
+                </div>
+                <div class="col-md-1">Automático</div>
+                <div class="col-md-2">
+                    <div class="ct-at-buttons">
+                        <a href="javascript:void(none)" name="st-play" id="st-play"><span class="glyphicon glyphicon-play white" aria-hidden="true"></span></a>&nbsp;&nbsp;
+                        <a href="javascript:void(none)" name="st-pause" id="st-pause"><span class="glyphicon glyphicon-pause white" aria-hidden="true"></span></a>
+                    </div>
+                </div>
+                <div class="col-md-2">
+                    <div class="img-loading">
+                        <img src="images/gear_02.gif" class="img-load"/>
+                    </div>
+                </div>
+            </dif>
         </div>
         <div class="container-fluid bg-2 text-center">
             <h3>Como jogar?</h3>
