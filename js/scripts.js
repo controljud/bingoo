@@ -21,6 +21,22 @@ floreio[51] = "Uma boa ideia";
 floreio[70] = "E continua tentando";
 floreio[90] = "Fim do jogo";
 
+function playAutomatico(){
+    if($('#st-automatico').is(':checked')) {
+        $('#st-automatico').attr('disabled', true);
+        tempo = 7000;
+        clearInterval(interval);
+        $('.img-loading').toggle(300);
+        interval = setInterval(function () {
+            sorteia();
+        }, tempo);
+    }
+}
+function pauseAutomatico(){
+    $('#st-automatico').attr('disabled', false);
+    $('.img-loading').hide();
+    clearInterval(interval);
+}
 function novoJogo(){
     narracao = $('#play_voice').is(':checked') * 1;
     piada = $('#jokes').is(':checked') * 1;
@@ -124,6 +140,12 @@ $(document).keypress(function(e){
         case 97: //a
             fala('O jogo está começando. Preparem-se');
             break;
+        case 50:
+            pauseAutomatico();
+            break;
+        case 49:
+            playAutomatico();
+            break;
     }
     return false;
 });
@@ -162,15 +184,9 @@ $(document).ready(function(){
         }
     });
     $('#st-play').click(function(){
-        tempo = 7000;
-        clearInterval(interval);
-        $('.img-loading').toggle(300);
-        interval = setInterval(function(){
-            sorteia();
-        },tempo);
+        playAutomatico();
     });
     $('#st-pause').click(function(){
-        $('.img-loading').hide();
-        clearInterval(interval);
+        pauseAutomatico();
     });
 });
