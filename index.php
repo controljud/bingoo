@@ -91,7 +91,7 @@
                         <a href="javascript:void(none)" name="st-pause" id="st-pause"><span class="glyphicon glyphicon-pause white" aria-hidden="true"></span></a>
                     </div>
                 </div>
-                <div class="col-md-2">
+                <div class="col-md-1">
                     <div class="img-loading">
                         <img src="images/gear_02.gif" class="img-load"/>
                     </div>
