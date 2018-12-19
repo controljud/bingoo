@@ -18,13 +18,14 @@ floreio[24] = "Rapazinho alegre";
 floreio[33] = "Idade de Cristo";
 floreio[45] = "Fim do primeiro tempo";
 floreio[51] = "Uma boa ideia";
+floreio[60] = "Porque está cansado";
 floreio[70] = "E continua tentando";
 floreio[90] = "Fim do jogo";
 
 function playAutomatico(){
     if($('#st-automatico').is(':checked')) {
         $('#st-automatico').attr('disabled', true);
-        tempo = 7000;
+        tempo = 7500;
         clearInterval(interval);
         $('.img-loading').toggle(300);
         interval = setInterval(function () {
@@ -94,6 +95,14 @@ function sorteia(){
                     fala(num);
                 }
                 // - Fim da voz
+
+                if(total == 45){
+                    fala('Já estou cansada de falar.');
+                    fala('Alguém quer cantar o jogo?');
+                    fala('Não?');
+                    fala('Pooooooooxa');
+                }
+
                 cam++;
             }
         }
@@ -129,7 +138,7 @@ $(document).keypress(function(e){
             fala('Números embaralhados com sucesso');
             break;
         case 98: //b
-            fala('Alguém ganhou o bingo');
+            fala('Alguém ganhou o bingo?');
             break;
         case 99: //c
             fala('Calma que já estou cantando o bingo');
