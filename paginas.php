@@ -28,12 +28,12 @@
     $x = 1;
     foreach($jogos as $jogo){
         $y = 0;
-        echo "<table style='float:left; margin:12px; cellpadding='0' cellspacing='0'>";
+        echo "<table style='float:left; margin:13px; cellpadding='0' cellspacing='0'>";
         echo "<tr><td>".$x."</td></tr>";
         for ($i = 0; $i < 4; $i++) {
             echo "<tr>";
             for ($j = 0; $j < 4; $j++) {
-                echo "<td style='font-size:15px; border:1px solid black; padding:10px; text-align:center'>" . $jogo[$y] . "</td>";
+                echo "<td style='font-size:16px; border:1px solid black; padding:10px; text-align:center'>" . $jogo[$y] . "</td>";
                 $y++;
             }
             echo "</tr>";
