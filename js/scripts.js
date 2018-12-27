@@ -98,7 +98,7 @@ function sorteia(){
                 }
                 // - Fim da voz
 
-                if(total == 2){ //Piada automática
+                if(total == 85){ //Piada automática
                     fala('Já estou cansada de falar.');
                     fala('Alguém quer cantar o jogo no meu lugar?');
                     fala('Não?');
