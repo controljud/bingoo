@@ -9,10 +9,12 @@ var floreio = {};
 floreio[1] = "Começou o jogo";
 floreio[2] = "Feijão com arroz";
 floreio[6] = "Meia dúzia";
+floreio[10] = "Nota 10";
 floreio[11] = "Um atrás do outro";
 floreio[12] = "Uma dúzia";
 floreio[13] = "Número da sorte";
 floreio[18] = "Minha idade";
+floreio[20] = " Ver";
 floreio[22] = "Dois patinhos na lagoa";
 floreio[24] = "Rapazinho alegre";
 floreio[33] = "Idade de Cristo";
@@ -96,9 +98,9 @@ function sorteia(){
                 }
                 // - Fim da voz
 
-                if(total == 45){
+                if(total == 2){ //Piada automática
                     fala('Já estou cansada de falar.');
-                    fala('Alguém quer cantar o jogo?');
+                    fala('Alguém quer cantar o jogo no meu lugar?');
                     fala('Não?');
                     fala('Pooooooooxa');
                 }
@@ -171,8 +173,10 @@ $(document).ready(function(){
     });
     $('#btGerarPaginas').click(function(){
         val = $('#paginas').val();
-        if(val != '' && val < 50){
+        if(val != '' && val < 50 && val > 0){
             window.open('../paginas.php?pg='+val);
+        }else{
+            alert('Quantidade de páginas não permitida');
         }
     });
     $('.numeroSorteado').click(function(){
@@ -193,9 +197,13 @@ $(document).ready(function(){
         }
     });
     $('#st-play').click(function(){
+        $('#st-pause').show();
+        $('#st-play').hide();
         playAutomatico();
     });
     $('#st-pause').click(function(){
+        $('#st-pause').hide();
+        $('#st-play').show();
         pauseAutomatico();
     });
 });

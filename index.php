@@ -88,7 +88,7 @@
                 <div class="col-md-2">
                     <div class="ct-at-buttons">
                         <a href="javascript:void(none)" name="st-play" id="st-play"><span class="glyphicon glyphicon-play white" aria-hidden="true"></span></a>&nbsp;&nbsp;
-                        <a href="javascript:void(none)" name="st-pause" id="st-pause"><span class="glyphicon glyphicon-pause white" aria-hidden="true"></span></a>
+                        <a href="javascript:void(none)" name="st-pause" id="st-pause" style="display:none"><span class="glyphicon glyphicon-pause white" aria-hidden="true"></span></a>
                     </div>
                 </div>
                 <div class="col-md-1">
