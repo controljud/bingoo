@@ -58,6 +58,8 @@ function fala(texto){
         } else {
             if($('#jokes').is(':checked')) {
                 msg = new SpeechSynthesisUtterance(texto + ', ' + floreio[texto]);
+            }else{
+                msg = new SpeechSynthesisUtterance(texto);
             }
         }
         window.speechSynthesis.speak(msg);
@@ -77,6 +79,9 @@ function ultimosSorteios(num){
     $('.ultimosNumeros').html(sort);
 }
 function sorteia(){
+    if(total == 0){
+        fala('Que a sorte esteja sempre a seu favor!');
+    }
     achou = false;
     if(total < tam) {
         while(!achou) {
