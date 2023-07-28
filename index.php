@@ -18,6 +18,7 @@
         <script src="js/bootstrap.js"></script>
         <script src="js/scripts.js"></script>
     </head>
+
     <body>
         <nav class="navbar navbar-default" id="navTit">
             <div class="container">
@@ -38,6 +39,7 @@
                 </div>
             </div>
         </nav>
+
         <div class="container-fluid bg-1 text-center" id="contPrinc">
             <div class="row">
                 <div class="col-md-1" style="text-align:right">
@@ -50,11 +52,13 @@
                 <div class="col-md-1">Piadas</div>
                 <div class="col-md-8"></div>
             </div>
+
             <div class="row">
                 <div class="col-md-3">Últimos números</div>
                 <div class="col-md-3">Sorteio</div>
                 <div class="col-md-6">Sorteados</div>
             </div>
+
             <div class="row">
                 <div class="col-md-3 txt-center">
                     <div class="ultimosNumeros"></div>
@@ -80,6 +84,7 @@
                     </div>
                 </div>
             </div>
+
             <dif class="row">
                 <div class="col-md-1" style="text-align: right">
                     <input style="width:15px; margin:12px" type="checkbox" name="st-automatico" id="st-automatico" />
@@ -98,6 +103,7 @@
                 </div>
             </dif>
         </div>
+        
         <div class="container-fluid bg-2 text-center">
             <h3>Como jogar?</h3>
             <p>Bingoo é um jogo normal de bingo com 90 casas decimais, que serão sorteadas aleatoriamente para preenchimento ou marcação em papel.</p>
@@ -124,7 +130,6 @@
                     <p>A quantidade não pode ultrapassar 50 páginas</p>
                 </div>
             </div>
-
         </div>
     </body>
 </html>

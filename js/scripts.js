@@ -35,11 +35,13 @@ function playAutomatico(){
         }, tempo);
     }
 }
+
 function pauseAutomatico(){
     $('#st-automatico').attr('disabled', false);
     $('.img-loading').hide();
     clearInterval(interval);
 }
+
 function novoJogo(){
     narracao = $('#play_voice').is(':checked') * 1;
     piada = $('#jokes').is(':checked') * 1;
@@ -47,10 +49,12 @@ function novoJogo(){
     url = url.split('?')[0];
     location.href = url + '?narracao=' + narracao + '&piada=' + piada;
 }
+
 function dialoga(){
     texto = prompt('O que você quer que eu fale?');
     fala(texto);
 }
+
 function fala(texto){
     if($('#play_voice').is(':checked')) {
         if (isNaN(texto) || floreio[texto] == undefined) {
@@ -65,6 +69,7 @@ function fala(texto){
         window.speechSynthesis.speak(msg);
     }
 }
+
 function ultimosSorteios(num){
     sorteados[sorteados.length] = num;
     var sort = '';
@@ -78,6 +83,7 @@ function ultimosSorteios(num){
     }
     $('.ultimosNumeros').html(sort);
 }
+
 function sorteia(){
     if(total == 0){
         fala('Que a sorte esteja sempre a seu favor!');
@@ -119,6 +125,7 @@ function sorteia(){
         }
     }
 }
+
 function redimensiona(){
     altura = window.innerHeight;
     altTit = $('#navTit').height();
@@ -132,6 +139,7 @@ function redimensiona(){
         'padding-bottom' : tamMarg
     });
 }
+
 $(document).keypress(function(e){
     cod = e.keyCode || e.charCode;
     switch(cod){
@@ -165,17 +173,22 @@ $(document).keypress(function(e){
     }
     return false;
 });
+
 $(document).ready(function(){
     redimensiona();
+
     $('.btSortear').click(function(){
         sorteia();
     });
+
     $('.btNovoJogo').click(function(){
         novoJogo();
     });
+
     $('.btEmbaralhar').click(function(){
         embaralha();
     });
+
     $('#btGerarPaginas').click(function(){
         val = $('#paginas').val();
         if(val != '' && val < 50 && val > 0){
@@ -184,9 +197,11 @@ $(document).ready(function(){
             alert('Quantidade de páginas não permitida');
         }
     });
+
     $('.numeroSorteado').click(function(){
        sorteia();
     });
+
     $('#play_voice').change(function(){
         if(!$(this).is(':checked')){
             $('#jokes').attr('disabled', true);
@@ -194,6 +209,7 @@ $(document).ready(function(){
             $('#jokes').attr('disabled', false);
         }
     });
+
     $('#st-automatico').change(function(){
         if($(this).is(':checked')){
             $('.ct-at-buttons').toggle(300);
@@ -201,11 +217,13 @@ $(document).ready(function(){
             $('.ct-at-buttons').hide();
         }
     });
+
     $('#st-play').click(function(){
         $('#st-pause').show();
         $('#st-play').hide();
         playAutomatico();
     });
+    
     $('#st-pause').click(function(){
         $('#st-pause').hide();
         $('#st-play').show();

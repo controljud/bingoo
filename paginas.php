@@ -1,6 +1,6 @@
 <?php
     $qtdNumeros = 90;
-    $qtdPorPagina = 15;
+    $qtdPorPagina = 20;
     $limite = 100;
     $qtdCartela = 16;
 
@@ -28,8 +28,11 @@
     $x = 1;
     foreach($jogos as $jogo){
         $y = 0;
+        $q++;
+
         echo "<table style='float:left; margin:13px; cellpadding='0' cellspacing='0'>";
         echo "<tr><td>".$x."</td></tr>";
+        
         for ($i = 0; $i < 4; $i++) {
             echo "<tr>";
             for ($j = 0; $j < 4; $j++) {
@@ -38,12 +41,14 @@
             }
             echo "</tr>";
         }
+        
         echo "</table>";
-        $q++;
+        
         if($q == $qtdPorPagina) {
-            echo "<div style='page-break-after: always;'></div>";
+            echo "<div style='width: 100%; page-break-after: always;'>.</div>";
             $q = 0;
             $x = 0;
         }
+        
         $x++;
     }

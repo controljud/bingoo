@@ -3,27 +3,35 @@ body {
     line-height: 1.8;
     color: #f5f6f7;
 }
+
 td{
     text-align: center;
 }
+
 p {font-size: 16px;}
+
 .margin {margin-bottom: 45px;}
+
 .bg-1 {
     background-color: #1abc9c; /* Green */
     color: #ffffff;
 }
+
 .bg-2 {
     background-color: #474e5d; /* Dark Blue */
     color: #ffffff;
 }
+
 .bg-3 {
     background-color: #ffffff; /* White */
     color: #555555;
 }
+
 .bg-4 {
     background-color: #2f2f2f; /* Black Gray */
     color: #fff;
 }
+
 .navbar {
     padding-top: 15px;
     padding-bottom: 15px;
@@ -33,27 +41,36 @@ p {font-size: 16px;}
     font-size: 12px;
     letter-spacing: 5px;
 }
+
 .navbar-nav  li a:hover {
     color: #1abc9c !important;
 }
+
 .numeroSorteado{
     font-size: 250px;
     cursor:pointer;
 }
+
 .ultimosNumeros{ font-size: 25px; }
+
 .btSortear{ font-size: 35px; }
+
 #contPrinc{
     padding-top:20px;
 }
+
 .white, .white a {
     color: #fff;
 }
+
 .ct-at-buttons{
     display:none;
 }
+
 .img-loading {
     display: none;
 }
+
 .img-load{
     width:100px;
     height:100px;
